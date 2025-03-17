@@ -66,6 +66,14 @@ h1, h2, h3, h4, h5, h6{
     text-align: center;
 }
 /* #endregion */
+/* #region test */
+.container{
+    display: block;
+    color: blue;
+    padding: 10px;
+    margin: 10px;
+    border: red solid;
+}
 /* #region FOOTER MAIN */
 .footer-main{
     background-color: var(--secondary);

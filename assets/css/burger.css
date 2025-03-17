@@ -1,0 +1,58 @@
+/* Grundlæggende styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+nav {
+    background: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Burger-knap */
+#burger-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Menu (skjult som standard) */
+#menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Skjuler menuen */
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background: lightslategray;
+    width: 200px;
+}
+
+/* Viser menuen når aktiv */
+#menu.active {
+    display: flex;
+}
+
+/* Links styling */
+#menu li {
+    padding: 15px;
+    border-bottom: 1px solid #555;
+}
+
+#menu a {
+    color: white;
+    text-decoration: none;
+}
+#menu a:hover{
+    color: red;
+    transition: 500ms;
+}
