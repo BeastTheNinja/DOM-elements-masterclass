@@ -1,0 +1,68 @@
+1. getElementById()
+Beskrivelse:
+
+Finder ét HTML-element ud fra dets id-attribut.
+Returnerer et enkelt element (eller null, hvis ingen findes).
+Id'er er unikke, så der kan højst være ét element med et givet id.
+let element = document.getElementById("minId");
+console.log(element);
+Brugsscenarie:
+Bruges, når du ved, at der kun er ét element med det specifikke id, og du hurtigt vil tilgå det.
+
+2. getElementsByClassName()
+Beskrivelse:
+
+Finder alle HTML-elementer med en given klasse.
+Returnerer en HTMLCollection (en slags liste over elementer).
+HTMLCollection er live, dvs. den opdateres, hvis DOM’en ændrer sig.
+let elementer = document.getElementsByClassName("minKlasse");
+console.log(elementer); // HTMLCollection
+console.log(elementer[0]); // Første element i listen
+Brugsscenarie:
+Bruges, når du skal manipulere flere elementer med samme klasse.
+
+3. querySelectorAll()
+Beskrivelse:
+
+Finder alle HTML-elementer, der matcher en CSS-selektor.
+Returnerer en NodeList (en slags liste over elementer).
+NodeList er ikke live, så den opdateres ikke, hvis DOM’en ændrer sig.
+let elementer = document.querySelectorAll(".minKlasse");
+console.log(elementer); // NodeList
+console.log(elementer[0]); // Første element i listen
+Brugsscenarie:
+Bruges, når du vil bruge mere fleksible selektorer som klasser (.klasse), id’er (#id), elementer (div) eller kombinationer (div p).
+
+
+4. Forskellen mellem getElementById, getElementsByClassName og querySelectorAll
+Metode	                        Returnerer	            Type	            Live?	            Selector Type
+getElementById(id)	            Ét element	            Element	            Nej	                id-baseret (#id)
+getElementsByClassName(klasse)	HTMLCollection	        HTMLCollection	    Ja	                Klasse (.klasse)
+querySelectorAll(selektor)	    NodeList	            NodeList	        Nej	CSS-selektor    (#id, .klasse, div p)
+
+
+5. createElement()
+Beskrivelse:
+
+Opretter et nyt HTML-element i JavaScript, men tilføjer det ikke automatisk til DOM’en.
+let nytElement = document.createElement("p"); // Opretter et <p>-element
+nytElement.textContent = "Hej verden!";
+
+6. appendChild()
+Beskrivelse:
+
+Tilføjer et element som et barn til et eksisterende element.
+let container = document.getElementById("minContainer");
+let nytElement = document.createElement("p");
+nytElement.textContent = "Dette er et nyt afsnit!";
+container.appendChild(nytElement);
+Brugsscenarie:
+Når du dynamisk vil tilføje nye elementer til en eksisterende del af DOM’en.
+
+Opsummering:
+
+getElementById() → Finder ét element via id.
+getElementsByClassName() → Finder flere elementer via klasse (HTMLCollection, live).
+querySelectorAll() → Finder flere elementer via en CSS-selektor (NodeList, ikke live).
+createElement() → Opretter et nyt HTML-element i JavaScript.
+appendChild() → Tilføjer et element som et barn af et andet element.
